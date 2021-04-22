@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<style>
+    div{
+        width:300px
+    }
+</style>
+<script>
+    function myFirstFunction(){
+        var txtName=document.getElementById("txtName")
+        txtName.classList.add("border")
+        
+    if (txtName.value == ""){
+    //txtName.style.borderColor="red";
+    txtName.classList.add("border-danger")
+    document.getElementById("errName").innerHTML="Please enter your Name"
+    }
+    else{
+       // txtName.style.borderColor="green" ; 
+       txtName.classList.add("border-success")
+       txtName.classList.remove("border-danger")
+       document.getElementById("errName").innerHTML="Name verified"
+    }
+    
+    var txtnumber=document.getElementById("txtnumber")
+        txtnumber.classList.add("border")
+        var num=txtnumber.value*1
+        
+    if (txtnumber.value.length < 10){
+    //txtName.style.borderColor="red";
+    txtnumber.classList.add("border-danger")
+    document.getElementById("errnumber").innerHTML="invalid number"
+    }
+    else{
+      // txtName.style.borderColor="green" ; 
+       txtnumber.classList.add("border-success")
+       txtnumber.classList.remove("border-danger")
+       document.getElementById("errnumber").innerHTML= "Number Validated"
+    }
+    var txtaddress=document.getElementById("txtaddress")
+        txtaddress.classList.add("border")
+        var add=txtaddress.value*1
+        
+    if (add < 600125 || add > 600200){
+    //txtName.style.borderColor="red";
+    txtaddress.classList.add("border-danger")
+    document.getElementById("erraddress").innerHTML="delivery not available"
+    }
+    else{
+      // txtName.style.borderColor="green" ; 
+       txtaddress.classList.add("border-success")
+       txtaddress.classList.remove("border-danger")
+       document.getElementById("erraddress").innerHTML= "delivery available"
+    }
+        
+    
+    }
+    
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <p> 
+        <img src="fashion-logos.jpg" height="100" width="100" />
+
+<font color ="blue" size="+12" ><center> FASHION SHOP</center> </font>
+</p>
+<p>
+    <font color ="black" size="5" > Home </font>
+    
+    <a target ="_blank" href="contactus.html"> <font size="5">Contact us</font></a>
+    </p>
+      
+      <div class="alert alert-primary">
+
+        <label for="txtusername" class="form-control">NAME</label>
+      <input class="form-control" type="text" id="txtName" />
+      <span id="errName"></span>
+      <label for="txtnumber" class="form-control">NUMBER</label>
+      <input class="form-control" type="number" id="txtnumber" />
+      <span id="errnumber">
+          <!---innerHTML-->
+          </span>
+          <label for="txtaddress" class="form-control">ADDRESS PIN CODE</label>
+      <input class="form-control" type="text" id="txtaddress" />
+      <span id="erraddress"></span>
+      
+      <button class="btn btn-success" onclick="myFirstFunction()">submit</button>
+      </div>
+      
+  </body>
+  </html>
